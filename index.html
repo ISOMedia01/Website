@@ -109,7 +109,7 @@
         <div class="container mx-auto px-6 relative z-20">
             <div class="max-w-4xl mx-auto text-center">
               <h1 class="hero-text text-5xl md:text-7xl lg:text-8xl font-medium text-white mb-8 leading-tight">
-    Capturing Your <span class="underline-animation" style="font-family: 'Playfair Display', serif; font-weight: 400;">Most Precious</span> Moments
+    Capturing Your <span class="underline-animation">Most Precious</span> Moments
 </h1>
 
 <style>
@@ -127,15 +127,17 @@
 .underline-animation {
     position: relative;
     display: inline-block;
+    font-family: 'Playfair Display', serif; /* Matches the hero-text font */
+    font-weight: 400; /* Ensures consistency */
 }
 
 .underline-animation::after {
     content: '';
     position: absolute;
-    bottom: -10px; /* Adjust underline position */
+    bottom: -10px; /* Position the underline slightly lower */
     left: 0;
     width: 0;
-    height: 4px; /* Underline thickness */
+    height: 4px; /* Thicker underline */
     background: white; /* Underline color */
     animation: underline 0.5s 0.3s forwards ease-in-out; /* Animation timing */
 }
