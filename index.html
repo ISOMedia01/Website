@@ -105,7 +105,13 @@
     <!-- Hero Section -->
     <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
         <div class="absolute inset-0 bg-black opacity-30 z-10"></div>
-   <div class="parallax absolute inset-0 h-[120vh]" style="background-image: url('https://raw.githubusercontent.com/ISOMedia01/Website/main/Header2.jpeg'); background-size: cover; background-position: center center; background-attachment: fixed;"></div>
+   <div class="parallax absolute inset-0 h-[120vh]" 
+     style="background-image: url('https://raw.githubusercontent.com/ISOMedia01/Website/main/Header2.jpeg'); 
+            background-size: cover; 
+            background-position: center center; 
+            background-attachment: fixed; 
+            transform: scale(1.1); /* Slightly scales up the image to prevent clipping */
+            background-repeat: no-repeat;">
         <div class="container mx-auto px-6 relative z-20">
             <div class="max-w-4xl mx-auto text-center">
                 <h1 class="hero-text text-5xl md:text-7xl lg:text-8xl font-medium text-white mb-8 leading-tight">Capturing Your <span class="gradient-text">Most Precious</span> Moments</h1>
@@ -642,17 +648,16 @@
         </div>
     </footer>
 
-    <script>
-        // Enhanced parallax effect
-        document.addEventListener('scroll', function() {
-            const parallaxElements = document.querySelectorAll('.parallax');
-            const scrollPosition = window.pageYOffset;
-            
-            parallaxElements.forEach(function(element) {
-                const speed = element.getAttribute('data-speed') || 0.5;
-                element.style.backgroundPositionY = (scrollPosition * speed) + 'px';
-            });
-        });
+   
+       <script>
+            // Enhanced parallax effect
+    document.addEventListener('scroll', function() {
+        const parallaxElement = document.querySelector('.parallax');
+        const scrollPosition = window.pageYOffset;
+        const speed = 0.3; // Adjust this value to control the parallax speed (lower is slower)
+        parallaxElement.style.backgroundPositionY = -(scrollPosition * speed) + 'px';
+    });
+
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
