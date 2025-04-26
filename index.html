@@ -108,10 +108,39 @@
    <div class="parallax absolute inset-0 h-[120vh]" style="background-image: url('https://raw.githubusercontent.com/ISOMedia01/Website/main/Header2.jpeg'); background-size: cover; background-position: center center; background-attachment: fixed;"></div>
         <div class="container mx-auto px-6 relative z-20">
             <div class="max-w-4xl mx-auto text-center">
-               <h1 class="hero-text text-5xl md:text-7xl lg:text-8xl text-white mb-8 leading-tight" 
-    style="font-family: 'Inter', sans-serif; font-weight: 300; font-style: normal;">
-    Capturing Your Most Precious Moments
+               <h1 class="hero-text text-5xl md:text-7xl lg:text-8xl font-medium text-white mb-8 leading-tight">
+    Capturing Your <span class="underline-animation">Most Precious</span> Moments
 </h1>
+
+<style>
+/* Animation keyframes */
+@keyframes underline {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Underline animation styles */
+.underline-animation {
+    position: relative;
+    display: inline-block;
+}
+
+.underline-animation::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white; /* Change to your preferred underline color */
+    transition: width 0.5s ease-in-out;
+    animation: underline 0.5s forwards ease-in-out;
+}
+</style>
                 <p class="text-xl text-white mb-12 max-w-2xl mx-auto">Professional photography services for weddings, portraits, and events that tell your unique story with elegance and artistry.</p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
                     <a href="#contact" class="bg-white text-black px-8 py-4 font-medium hover:bg-gray-100 transition duration-300">Book Your Session</a>
