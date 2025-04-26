@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ISO Media | Wedding Photography</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Inter:wght@300;400;500&display=swap">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a1a;
+      background-color: #fff;
+      overflow-x: hidden;
+    }
+
+    .hero-text {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .package-card {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+      border-top: 4px solid transparent;
+    }
+
+    .package-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    }
+
+    .premium-card {
+      border-top-color: #d4af37;
+    }
+
+    .standard-card {
+      border-top-color: #6b7280;
+    }
+
+    .elite-card {
+      border-top-color: #1a1a1a;
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: #000;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover:after {
+      width: 100%;
+    }
+
+    .hover-zoom {
+      transition: transform 0.5s ease;
+    }
+
+    .hover-zoom:hover {
+      transform: scale(1.03);
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #1a1a1a 0%, #4a4a4a 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .price-tag {
+      position: relative;
+      display: inline-block;
+    }
+
+    .price-tag::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -10px;
+      width: calc(100% + 20px);
+      height: 100%;
+      background-color: #f3f4f6;
+      transform: skewX(-15deg);
+      z-index: -1;
+    }
+
+    @media (max-width: 768px) {
+      .parallax {
+        background-attachment: scroll;
+      }
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+  <!-- Navigation -->
+  <nav class="fixed w-full z-50 bg-white bg-opacity-95 backdrop-filter backdrop-blur-sm border-b border-gray-100">
+    <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+      <a href="#" class="text-3xl font-serif font-medium tracking-tight">ISO MEDIA</a>
+      <div class="hidden md:flex space-x-10">
+        <a href="#services" class="nav-link text-sm uppercase tracking-wider">Services</a>
+        <a href="#portfolio" class="nav-link text-sm uppercase tracking-wider">Portfolio</a>
+        <a href="#experience" class="nav-link text-sm uppercase tracking-wider">Experience</a>
+        <a href="#testimonials" class="nav-link text-sm uppercase tracking-wider">Testimonials</a>
+        <a href="#contact" class="nav-link text-sm uppercase tracking-wider">Contact</a>
+      </div>
+      <button class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-black opacity-30 z-10"></div>
+    <div class="parallax absolute inset-0"
+      style="background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+    </div>
+    <div class="container mx-auto px-6 relative z-20">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="hero-text text-5xl md:text-7xl lg:text-8xl font-medium text-white mb-8 leading-tight">Your
+          <span class="gradient-text">Wedding Story</span> Captured</h1>
+        <p class="text-xl text-white mb-12 max-w-2xl mx-auto">Timeless wedding photography that preserves every emotion,
+          detail, and unforgettable moment of your special day.</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="#packages"
+            class="bg-white text-black px-8 py-4 font-medium hover:bg-gray-100 transition duration-300">View
+            Packages</a>
+          <a href="#contact"
+            class="border-2 border-white text-white px-8 py-4 font-medium hover:bg-white hover:text-black transition duration-300">Book
+            Consultation</a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-10 left-0 right-0 flex justify-center z-20">
+      <a href="#services" class="animate-bounce">
+        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round, stroke-width=" 2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-20">
+        <span class="text-sm uppercase tracking-widest text-gray-500">Our Approach</span>
+        <h2 class="hero-text text-4xl md:text-5xl mt-4 mb-6">Why Couples <span class="gradient-text">Choose Us</span>
+        </h2>
+        <p class="max-w-2xl mx-auto text-gray-600">We blend artistic vision with technical expertise to create wedding
+          photos you'll treasure for generations.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="text-center">
+          <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="hero-text text-xl mb-4">Storytelling Approach</h3>
+          <p class="text-gray-600">We document your day as it unfolds naturally, capturing authentic emotions and
+            spontaneous moments between posed portraits.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 9l2-1m0 0l7-4 7 4M5 19v-8a2 2 0 012-2h10a2 2 0 012 2v8m-8-6h.01M12 15h.01M12 12h.01"></path>
+            </svg>
+          </div>
+          <h3 class="hero-text text-xl mb-4">Premium Quality</h3>
+          <p class="text-gray-600">From professional-grade equipment to handcrafted albums, we use only the finest
+            materials to preserve your memories.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg class="w-10 h-10 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="hero-text text-xl mb-4">Efficient Process</h3>
+          <p class="text-gray-600">Receive sneak peeks within 48 hours and your full gallery in 3 weeks. We respect your
+            time while delivering exceptional quality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Packages Section -->
+  <section id="packages" class="py-24 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-20">
+        <span class="text-sm uppercase tracking-widest text-gray-500">Investment</span>
+        <h2 class="hero-text text-4xl md:text-5xl mt-4 mb-6">Wedding <span class="gradient-text">Packages</span></h2>
+        <p class="max-w-2xl mx-auto text-gray-600">Customizable collections designed to suit different wedding sizes and
+          budgets. All packages include high-resolution digital files.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Standard Package -->
+        <div class="package-card standard-card bg-white p-8 rounded-lg border border-gray-100 shadow-sm">
+          <h3 class="hero-text text-2xl mb-4">Standard</h3>
+          <p class="text-gray-600 mb-6">Perfect for intimate weddings or elopements</p>
+          <div class="mb-8">
+            <span class="price-tag hero-text text-4xl relative z-10">$2,800</span>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>6 hours of continuous coverage</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>1 photographer</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Minimum 400 edited photos</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Online gallery for 1 year</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Printing rights</span>
+            </li>
+          </ul>
+          <a href="#contact"
+            class="block w-full bg-gray-100 text-black px-6 py-3 font-medium text-center hover:bg-gray-200 transition duration-300">Inquire
+            Now</a>
+        </div>
+
+        <!-- Premium Package -->
+        <div
+          class="package-card premium-card bg-white p-8 rounded-lg border border-gray-100 shadow-sm transform scale-105">
+          <div class="absolute top-0 right-0 bg-yellow-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">MOST
+            POPULAR</div>
+          <h3 class="hero-text text-2xl mb-4">Premium</h3>
+          <p class="text-gray-600 mb-6">Our most popular package for full wedding days</p>
+          <div class="mb-8">
+            <span class="price-tag hero-text text-4xl relative z-10">$4,200</span>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>10 hours of continuous coverage</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>2 photographers</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Minimum 700 edited photos</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Engagement session included</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Online gallery for 2 years</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>10×10" premium flush mount album</span>
+            </li>
+          </ul>
+          <a href="#contact"
+            class="block w-full bg-yellow-600 text-white px-6 py-3 font-medium text-center hover:bg-yellow-700 transition duration-300">Inquire
+            Now</a>
+        </div>
+
+        <!-- Elite Package -->
+        <div class="package-card elite-card bg-white p-8 rounded-lg border border-gray-100 shadow-sm">
+          <h3 class="hero-text text-2xl mb-4">Elite</h3>
+          <p class="text-gray-600 mb-6">Comprehensive coverage for multi-day celebrations</p>
+          <div class="mb-8">
+            <span class="price-tag hero-text text-4xl relative z-10">$6,500</span>
+          </div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Full weekend coverage (up to 16 hours total)</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>2 photographers + assistant</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Minimum 1,200 edited photos</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round, stroke-width=" 2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Engagement session + bridal portraits</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Online gallery for 3 years</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>12×12" luxury album + parent albums</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-5 h-5 text-gray-700 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>16×20" fine art print</span>
+            </li>
+          </ul>
+          <a href="#contact"
+            class="block w-full bg-black text-white px-6 py-3 font-medium text-center hover:bg-gray-800 transition duration-300">Inquire
+            Now</a>
+        </div>
+      </div>
+
+      <div class="text-center mt-16">
+        <p class="text-gray-600 mb-6">* All packages require a 30% deposit to secure your date</p>
+        <a href="#addons"
+          class="inline-flex items-center text-black font-medium hover:text-gray-700 transition duration-300">
+          View Add-On Options
+          <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add-Ons Section -->
+  <section id="addons" class="py-24 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-20">
+        <span class="text-sm uppercase tracking-widest text-gray-500">Enhance Your Experience</span>
+        <h2 class="hero-text text-4xl md:text-5xl mt-4 mb-6">Premium <span class="gradient-text">Add-Ons</span></h2>
+        <p class="max-w-2xl mx-auto text-gray-600">Customize your package with these additional services to make your
+          wedding photography experience even more special.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+          <h3 class="hero-text text-xl mb-4">Additional Hours</h3>
+          <p class="text-gray-600 mb-6">Extend your coverage for those unforgettable late-night dance moves.</p>
+          <div class="flex items-center">
+            <span class="text-2xl font-medium mr-4">$350/hr</span>
+            <span class="text-sm text-gray-500">(2 hour minimum)</span>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+          <h3 class="hero-text text-xl mb-4">Second Shooter</h3>
+          <p class="text-gray-600 mb-6">An additional professional photographer for more comprehensive coverage.</p>
+          <div class="flex items-center">
+            <span class="text-2xl font-medium">$800/day</span>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+          <h3 class="hero-text text-xl mb-4">Bridal Portraits</h3>
+          <p class="text-gray-600 mb-6">A dedicated session to showcase your bridal look before the wedding day.</p>
+          <div class="flex items-center">
+            <span class="text-2xl font-medium">$450</span>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+          <h3 class="hero-text text-xl mb-4">Photo Booth</h3>
+          <p class="text-gray-600 mb-6">Fun, interactive experience for your guests with unlimited prints.</p>
+          <div class="flex items-center">
+            <span class="text-2xl font-medium">$1,200</span>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+          <h3 class="hero-text text-xl mb-4">Album Upgrade</h3>
+          <p class="text-gray-600 mb-6">Upgrade to our premium leather-bound heirloom album.</p>
+          <div class="flex items-center">
+            <span class="text-2xl font-medium">From $800</span>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-lg border border-gray-200">
+          <h3 class="hero-text text-xl mb-4">Destination Wedding</h3>
+          <p class="text-gray-600 mb-6">Let us join you for your destination celebration.</p>
+          <div class="flex items-center">
+            <span class="text-2xl font-medium">Custom Quote</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-24 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-20">
+        <span class="text-sm uppercase tracking-widest text-gray-500">Our Workflow</span>
+        <h2 class="hero-text text-4xl md:text-5xl mt-4 mb-6">The ISO Media <span class="gradient-text">Experience</span>
+        </h2>
+        <p class="max-w-2xl mx-auto text-gray-600">From initial consultation to delivering your final images, we provide
+          a seamless and enjoyable photography experience.</p>
+      </div>
+
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="hidden md:block absolute left-1/2 h-full w-1 bg-gray-200 transform -translate-x-1/2"></div>
+
+        <!-- Timeline items -->
+        <div class="space-y-16 md:space-y-0">
+          <!-- Item 1 -->
+          <div class="relative flex flex-col md:flex-row items-center md:even:flex-row-reverse">
+            <div
+              class="flex-shrink-0 w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4 md:mb-0 md:mx-8">
+              <span class="text-2xl font-medium">1</span>
+            </div>
+            <div class="md:w-1/2 p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+              <h3 class="hero-text text-xl mb-3">Initial Consultation</h3>
+              <p class="text-gray-600">We'll meet (in person or virtually) to discuss your vision, timeline, and
+                must-have shots. This is when we get to know each other and ensure we're the right fit.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="relative flex flex-col md:flex-row items-center md:even:flex-row-reverse">
+            <div
+              class="flex-shrink-0 w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4 md:mb-0 md:mx-8">
+              <span class="text-2xl font-medium">2</span>
+            </div>
+            <div class="md:w-1/2 p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+              <h3 class="hero-text text-xl mb-3">Planning Session</h3>
+              <p class="text-gray-600">About 2 months before your wedding, we'll create a detailed photography timeline,
+                scout locations (if needed), and finalize all the details.</p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="relative flex flex-col md:flex-row items-center md:even:flex-row-reverse">
+            <div
+              class="flex-shrink-0 w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4 md:mb-0 md:mx-8">
+              <span class="text-2xl font-medium">3</span>
+            </div>
+            <div class="md:w-1/2 p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+              <h3 class="hero-text text-xl mb-3">The Wedding Day</h3>
+              <p class="text-gray-600">We arrive early to capture getting ready photos and stay through your reception.
+                Our approach is a mix of directed portraits and documentary-style coverage.</p>
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="relative flex flex-col md:flex-row items-center md:even:flex-row-reverse">
+            <div
+              class="flex-shrink-0 w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4 md:mb-0 md:mx-8">
+              <span class="text-2xl font-medium">4</span>
+            </div>
+            <div class="md:w-1/2 p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+              <h3 class="hero-text text-xl mb-3">Post-Production</h3>
+              <p class="text-gray-600">We carefully edit each image with our signature style. You'll receive a sneak
+                peek within 48 hours and your full gallery in 3 weeks (or less!).</p>
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="relative flex flex-col md:flex-row items-center md:even:flex-row-reverse">
+            <div
+              class="flex-shrink-0 w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center mb-4 md:mb-0 md:mx-8">
+              <span class="text-2xl font-medium">5</span>
+            </div>
+            <div class="md:w-1/2 p-6 bg-white rounded-lg shadow-sm border border-gray-100">
+              <h3 class="hero-text text-xl mb-3">Album Design</h3>
+              <p class="text-gray-600">For packages including albums, we'll design a beautiful layout for your approval.
+                After your review, we'll send it to our professional lab for printing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-20">
+        <span class="text-sm uppercase tracking-widest text-gray-500">Have Questions?</span>
+        <h2 class="hero-text text-4xl md:text-5xl mt-4 mb-6">Frequently
+          <span class="gradient-text">Asked Questions</span></h2>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-6">
+        <div class="border-b border-gray-200 pb-6">
+          <button class="flex justify-between items-center w-full text-left group">
+                        <h3 class="hero-text text-lg md:text-xl font-medium text-gray-900 group-hover:text-black">How far in advance should we book?</h3>
+                        <svg class="w-6 h-6 text-gray-500 transform group-hover:rotate-180 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+          <div class="mt-4 pr-12">
+            <p class="text-gray-600">We recommend booking 9-12 months in advance, especially for popular wedding dates
+              (spring and fall weekends). That said, we occasionally have availability for last-minute weddings, so
+              don't hesitate to ask!</p>
+          </div>
+        </div>
+
+        <div class="border-b border-gray-200 pb-6">
+          <button class="flex justify-between items-center w-full text-left group">
+                        <h3 class="hero-text text-lg md:text-xl font-medium text-gray-900 group-hover:text-black">Do you travel for weddings?</h3>
+                        <svg class="w-6 h-6 text-gray-500 transform group-hover:rotate-180 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+          <div class="mt-4 pr-12">
+            <p class="text-gray-600">Absolutely! We love destination weddings. Travel within 100 miles is included in
+              our packages. For locations beyond that, we charge reasonable travel fees (typically just flight + 2
+              nights accommodation). International weddings are welcome too!</p>
+          </div>
+        </div>
+
+        <div class="border-b border-gray-200 pb-6">
+          <button class="flex justify-between items-center w-full text-left group">
+                        <h3 class="hero-text text-lg md:text-xl font-medium text-gray-900 group-hover:text-black">How many photos will we receive?</h3>
+                        <svg class="w-6 h-6 text-gray-500 transform group-hover:rotate-180 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+          <div class="mt-4 pr-12">
+            <p class="text-gray-600">This varies based on package and wedding length, but typically 60-80 edited images
+              per hour of coverage. We focus on quality over quantity—every image you receive will be professionally
+              edited and worthy of your album.</p>
+          </div>
+        </div>
+
+        <div class="border-b border-gray-200 pb-6">
+          <button class="flex justify-between items-center w-full text-left group">
+                        <h3 class="hero-text text-lg md:text-xl font-medium text-gray-900 group-hover:text-black">Can we request specific shots?</h3>
+                        <svg class="w-6 h-6 text-gray-500 transform group-hover:rotate-180 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+          <div class="mt-4 pr-12">
+            <p class="text-gray-600">Of course! We'll provide a questionnaire about 2 months before your wedding where
+              you can list must-have shots (family combinations, special details, etc.). We also encourage you to share
+              Pinterest boards or inspiration images.</p>
+          </div>
+        </div>
+
+        <div class="border-b border-gray-200 pb-6">
+          <button class="flex justify-between items-center w-full text-left group">
+                        <h3 class="hero-text text-lg md:text-xl font-medium text-gray-900 group-hover:text-black">What's your backup process?</h3>
+                        <svg class="w-6 h-6 text-gray-500 transform group-hover:rotate-180 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+          <div class="mt-4 pr-12">
+            <p class="text-gray-600">We take data security seriously. Images are backed up in 3 separate locations
+              immediately after your wedding. We retain all files for 5 years, so you can always order additional prints
+              or albums later.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-16">
+        <p class="text-gray-600 mb-6">Didn't find the answer you're looking for?</p>
+        <a href="#contact"
+          class="inline-block border-2 border-black px-8 py-3 font-medium hover:bg-black hover:text-white transition duration-300">Contact
+          Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-black text-white">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="hero-text text-4xl md:text-5xl mb-8">Ready to <span class="gradient-text">Reserve</span> Your Date?
+      </h2>
+      <p class="max-w-2xl mx-auto text-gray-300 mb-12">Wedding dates fill quickly—especially for spring and fall
+        weekends. Contact us today to check availability and begin planning your perfect wedding photography experience.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="#contact"
+          class="bg-white text-black px-8 py-4 font-medium hover:bg-gray-100 transition duration-300">Check
+          Availability</a>
+        <a href="tel:+15551234567"
+          class="border-2 border-white text-white px-8 py-4 font-medium hover:bg-white hover:text-black transition duration-300">Call
+          Now: (555) 123-4567</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-16">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-start mb-16">
+        <div class="mb-8 md:mb-0">
+          <h3 class="text-3xl font-serif font-medium tracking-tight mb-4">ISO MEDIA</h3>
+          <p class="text-gray-400 max-w-md">Professional wedding photography that captures the emotion, beauty, and
+            authenticity of your love story.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-12">
+          <div>
+            <h4 class="text-sm uppercase tracking-wider text-gray-400 mb-4">Quick Links</h4>
+            <ul class="space-y-3">
+              <li><a href="#packages" class="text-gray-300 hover:text-white transition duration-300">Packages</a></li>
+              <li><a href="#addons" class="text-gray-300 hover:text-white transition duration-300">Add-Ons</a></li>
+              <li><a href="#faq" class="text-gray-300 hover:text-white transition duration-300">FAQ</a></li>
+              <li><a href="#contact" class="text-gray-300 hover:text-white transition duration-300">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-sm uppercase tracking-wider text-gray-400 mb-4">Contact</h4>
+            <ul class="space-y-3">
+              <li class="text-gray-300">hello@isomedia.com</li>
+              <li class="text-gray-300">(555) 123-4567</li>
+              <li class="text-gray-300">123 Photography Ave<br>New York, NY 10001</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-sm uppercase tracking-wider text-gray-400 mb-4">Follow</h4>
+            <div class="flex space-x-6">
+              <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                </svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" />
+                </svg>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 ISO Media. All rights reserved.</p>
+        <div class="flex space-x-6">
+          <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Privacy Policy</a>
+          <a href="#" class="text-gray-400 hover:text-white text-sm transition duration-300">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ accordion functionality
+        document.querySelectorAll('.border-b button').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const content = faqItem.querySelector('div');
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.border-b').forEach(item => {
+                    if (item !== faqItem) {
+                        item.querySelector('div').style.display = 'none';
+                        item.querySelector('svg').classList.remove('rotate-180');
+                    }
+                });
+                
+                // Toggle current item
+                if (content.style.display === 'none' || !content.style.display) {
+                    content.style.display = 'block';
+                    button.querySelector('svg').classList.add('rotate-180');
+                } else {
+                    content.style.display = 'none';
+                    button.querySelector('svg').classList.remove('rotate-180');
+                }
+            });
+        });
+
+        // Initially hide all FAQ answers
+        document.querySelectorAll('.border-b div').forEach(content => {
+            content.style.display = 'none';
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', function() {
+            const parallax = document.querySelector('.parallax');
+            if (parallax) {
+                const scrollPosition = window.pageYOffset;
+                parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+            }
+        });
+  </script>
+</body>
+
+</html>
