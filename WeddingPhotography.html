@@ -109,27 +109,52 @@
 </head>
 
 <body class="antialiased">
-  <!-- Navigation -->
-  <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white bg-opacity-95 backdrop-filter backdrop-blur-sm border-b border-gray-100">
-        <div class="container mx-auto px-6 py-5 flex justify-between items-center">
-           <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-  <img src="https://raw.githubusercontent.com/ISOMedia01/Website/main/LogoTransparent.png" alt="ISO MEDIA logo" class="h-11 w-auto">
-</a>
-            <div class="hidden md:flex space-x-10">
-                <a href="#services" class="nav-link text-sm uppercase tracking-wider">Services</a>
-                <a href="#portfolio" class="nav-link text-sm uppercase tracking-wider">Portfolio</a>
-                <a href="#experience" class="nav-link text-sm uppercase tracking-wider">Experience</a>
-                <a href="#testimonials" class="nav-link text-sm uppercase tracking-wider">Testimonials</a>
-                <a href="#contact" class="nav-link text-sm uppercase tracking-wider">Contact</a>
-            </div>
-            <button class="md:hidden focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
+ <!-- Navigation -->
+<nav class="fixed w-full z-50 bg-white bg-opacity-95 backdrop-filter backdrop-blur-sm border-b border-gray-100">
+    <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+            <img src="https://raw.githubusercontent.com/ISOMedia01/Website/main/LogoTransparent.png" alt="ISO MEDIA logo" class="h-11 w-auto">
+        </a>
+
+        <!-- Links for Desktop -->
+        <div class="hidden md:flex space-x-10">
+            <a href="#services" class="nav-link text-sm uppercase tracking-wider">Services</a>
+            <a href="#portfolio" class="nav-link text-sm uppercase tracking-wider">Portfolio</a>
+            <a href="#experience" class="nav-link text-sm uppercase tracking-wider">Experience</a>
+            <a href="#testimonials" class="nav-link text-sm uppercase tracking-wider">Testimonials</a>
+            <a href="#contact" class="nav-link text-sm uppercase tracking-wider">Contact</a>
         </div>
-    </nav>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Links -->
+    <div class="hidden" id="mobile-menu">
+        <div class="container mx-auto px-6 py-5 flex flex-col space-y-4">
+            <a href="#services" class="nav-link text-sm uppercase tracking-wider">Services</a>
+            <a href="#portfolio" class="nav-link text-sm uppercase tracking-wider">Portfolio</a>
+            <a href="#experience" class="nav-link text-sm uppercase tracking-wider">Experience</a>
+            <a href="#testimonials" class="nav-link text-sm uppercase tracking-wider">Testimonials</a>
+            <a href="#contact" class="nav-link text-sm uppercase tracking-wider">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- JavaScript for Mobile Menu -->
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
 
   <!-- Hero Section -->
   <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
