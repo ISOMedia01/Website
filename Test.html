@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Photography Portfolio</title>
+  <style>
+    /* Base reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9f9f9;
+      color: #111;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #555;
+      font-weight: 600;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: #111;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    main {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .intro h2 {
+      font-size: 2rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem 0;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .section {
+      margin-top: 4rem;
+    }
+
+    .section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Photography Portfolio</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#weddings">Weddings</a>
+      <a href="#portraits">Portraits</a>
+      <a href="#events">Events</a>
+    </nav>
+  </header>
+
+  <main id="home" class="intro">
+    <h2>Choose a Collection</h2>
+  </main>
+
+  <section id="weddings" class="section">
+    <h2>Weddings</h2>
+    <div class="gallery">
+      <img src="images/wedding1.jpg" alt="Wedding 1">
+      <img src="images/wedding2.jpg" alt="Wedding 2">
+      <img src="images/wedding3.jpg" alt="Wedding 3">
+      <!-- Add more wedding photos here -->
+    </div>
+  </section>
+
+  <section id="portraits" class="section">
+    <h2>Portraits</h2>
+    <div class="gallery">
+      <img src="images/portrait1.jpg" alt="Portrait 1">
+      <img src="images/portrait2.jpg" alt="Portrait 2">
+      <img src="images/portrait3.jpg" alt="Portrait 3">
+      <!-- Add more portrait photos here -->
+    </div>
+  </section>
+
+  <section id="events" class="section">
+    <h2>Events</h2>
+    <div class="gallery">
+      <img src="images/event1.jpg" alt="Event 1">
+      <img src="images/event2.jpg" alt="Event 2">
+      <img src="images/event3.jpg" alt="Event 3">
+      <!-- Add more event photos here -->
+    </div>
+  </section>
+
+</body>
+</html>
