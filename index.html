@@ -78,23 +78,18 @@
                 background-attachment: scroll;
             }
         }
-        /* Add this to your CSS file */
+       /* Fade-in and fade-out effect */
 body {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Adjust duration and easing as needed */
+}
+
+body.fade-in {
   opacity: 1;
-  transition: opacity 0.5s ease-in-out;
 }
 
 body.fade-out {
   opacity: 0;
-}
-        /* Add this to your CSS file or inside a <style> tag in your index.html */
-body {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-body.loaded {
-  opacity: 1;
 }
     </style>
 </head>
@@ -755,22 +750,24 @@ body.loaded {
         document.querySelectorAll('.service-card').forEach(card => {
             observer.observe(card);
         });
-  // Add this script at the bottom of your index.html
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent immediate navigation
-        const href = link.getAttribute('href');
-        document.body.classList.add('fade-out');
-        setTimeout(() => {
-          window.location.href = href; // Navigate after the fade-out
-        }, 500); // Match the transition duration
-      });
-    });
-  });
-  // Add this script at the bottom of your index.html, just before the closing </body> tag
+  // Add fade-in class when the page loads
   window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
+    document.body.classList.add('fade-in');
+  });
+           
+  // Add fade-out effect on navigation (clicking links)
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent immediate navigation
+      const href = link.getAttribute('href');
+      document.body.classList.remove('fade-in');
+      document.body.classList.add('fade-out');
+      
+      // Navigate to the target page after the fade-out transition
+      setTimeout(() => {
+        window.location.href = href;
+      }, 500); // Match this duration to your CSS transition time
+    });
   });
 </script>
 </script>
