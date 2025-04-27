@@ -139,7 +139,8 @@ body.fade-out {
  <nav class="fixed-nav">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
      <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-    <img src="https://github.com/ISOMedia01/Website/raw/main/LogoTransparent.png" alt="ISO MEDIA logo" class="h-11 w-auto">
+    <a id="isoButton" href="index.html">
+  <img src="https://github.com/ISOMedia01/Website/raw/main/LogoTransparent.png" alt="ISO MEDIA logo" class="h-11 w-auto" style="cursor: pointer;" />
 </a>
       <div class="hidden md:flex space-x-10">
         <a href="#services" class="nav-link text-sm uppercase tracking-wider">Services</a>
@@ -806,6 +807,17 @@ body.fade-out {
       }, 500); // Match this duration to your CSS transition time
     });
   });
+  document.getElementById('isoButton').addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent immediate navigation
+    // Scroll to the top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Navigate to index.html after scrolling
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 500); // Adjust delay to match scroll duration
+  });
+</script>
   </script>
 </body>
 
