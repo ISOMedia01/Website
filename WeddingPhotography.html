@@ -792,23 +792,30 @@ body.fade-out {
         parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
       }
     });
-  // Add fade-in class when the page loads
+// Add fade-in effect on page load
   window.addEventListener('load', () => {
     document.body.classList.add('fade-in');
   });
 
-  // Add fade-out effect on navigation (clicking links)
+  // Add fade-out effect for navigation to other pages
   document.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault(); // Prevent immediate navigation
       const href = link.getAttribute('href');
+      
+      // Check if the link is internal (starts with # or is empty)
+      if (href && (href.startsWith('#') || href === '')) {
+        return; // Do nothing for internal links
+      }
+      
+      // For external links, prevent immediate navigation and add fade-out
+      e.preventDefault();
       document.body.classList.remove('fade-in');
       document.body.classList.add('fade-out');
       
-      // Navigate to the target page after the fade-out transition
+      // Navigate after the fade-out transition
       setTimeout(() => {
         window.location.href = href;
-      }, 500); // Match this duration to your CSS transition time
+      }, 500); // Match the transition duration (0.5s = 500ms)
     });
   });
   document.getElementById('isoButton').addEventListener('click', (e) => {
