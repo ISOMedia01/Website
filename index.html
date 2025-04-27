@@ -78,6 +78,15 @@
                 background-attachment: scroll;
             }
         }
+        /* Add this to your CSS file */
+body {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+body.fade-out {
+  opacity: 0;
+}
     </style>
 </head>
 <body class="antialiased">
@@ -737,6 +746,20 @@
         document.querySelectorAll('.service-card').forEach(card => {
             observer.observe(card);
         });
+  // Add this script at the bottom of your index.html
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent immediate navigation
+        const href = link.getAttribute('href');
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href; // Navigate after the fade-out
+        }, 500); // Match the transition duration
+      });
+    });
+  });
+</script>
     </script>
 </body>
 </html>
