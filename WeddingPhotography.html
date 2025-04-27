@@ -118,6 +118,19 @@
         background-attachment: scroll;
       }
     }
+    /* Fade-in and fade-out effect */
+body {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Adjust duration and easing as needed */
+}
+
+body.fade-in {
+  opacity: 1;
+}
+
+body.fade-out {
+  opacity: 0;
+}
   </style>
 </head>
 
@@ -774,6 +787,25 @@
         parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
       }
     });
+  // Add fade-in class when the page loads
+  window.addEventListener('load', () => {
+    document.body.classList.add('fade-in');
+  });
+
+  // Add fade-out effect on navigation (clicking links)
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault(); // Prevent immediate navigation
+      const href = link.getAttribute('href');
+      document.body.classList.remove('fade-in');
+      document.body.classList.add('fade-out');
+      
+      // Navigate to the target page after the fade-out transition
+      setTimeout(() => {
+        window.location.href = href;
+      }, 500); // Match this duration to your CSS transition time
+    });
+  });
   </script>
 </body>
 
