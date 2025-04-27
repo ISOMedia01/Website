@@ -701,13 +701,13 @@ body.fade-out {
    
        <script>
             // Enhanced parallax effect
-    document.addEventListener('scroll', function() {
-        const parallaxElement = document.querySelector('.parallax');
+    window.addEventListener('scroll', function() {
+      const parallax = document.querySelector('.parallax');
+      if (parallax) {
         const scrollPosition = window.pageYOffset;
-        const speed = 0.3; // Adjust this value to control the parallax speed (lower is slower)
-        parallaxElement.style.backgroundPositionY = -(scrollPosition * speed) + 'px';
+        parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+      }
     });
-
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
