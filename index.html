@@ -87,6 +87,15 @@ body {
 body.fade-out {
   opacity: 0;
 }
+        /* Add this to your CSS file or inside a <style> tag in your index.html */
+body {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+body.loaded {
+  opacity: 1;
+}
     </style>
 </head>
 <body class="antialiased">
@@ -759,6 +768,11 @@ body.fade-out {
       });
     });
   });
+  // Add this script at the bottom of your index.html, just before the closing </body> tag
+  window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+  });
+</script>
 </script>
     </script>
 </body>
