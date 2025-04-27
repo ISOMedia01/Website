@@ -769,6 +769,30 @@ body.fade-out {
       }, 500); // Match this duration to your CSS transition time
     });
   });
+  // Add fade-in class when the page loads
+  window.addEventListener('load', () => {
+    document.body.classList.add('fade-in');
+  });
+
+  // Add fade-out effect on navigation, but exclude anchor links with hashes (e.g., #services)
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href.startsWith('#')) {
+        // Skip fade-out for anchor links
+        return;
+      }
+
+      e.preventDefault(); // Prevent immediate navigation
+      document.body.classList.remove('fade-in');
+      document.body.classList.add('fade-out');
+
+      // Navigate to the target page after the fade-out transition
+      setTimeout(() => {
+        window.location.href = href;
+      }, 500); // Match this duration to your CSS transition time
+    });
+  });
 </script>
 </script>
     </script>
