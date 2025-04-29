@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
 
+        #content {
+            display: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #5cb85c;
+            border: none;
+            color: white;
+            border-radius: 4px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>New Website Coming Soon</h1>
+    <div id="login">
+        <p>Admin Access: Enter Password to Unlock</p>
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="checkPassword()">Unlock</button>
+    </div>
+    <div id="content">
+        <h2>Welcome, Admin!</h2>
+        <p>You have unlocked the site.</p>
+    </div>
+    <script>
+        function checkPassword() {
+            const passwordInput = document.getElementById('password').value;
+            if (passwordInput === '8800') {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+            } else {
+                alert('Incorrect password. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>
