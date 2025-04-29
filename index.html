@@ -49,15 +49,14 @@
         <p>You have unlocked the site.</p>
     </div>
     <script>
-        function checkPassword() {
-            const passwordInput = document.getElementById('password').value;
-            if (passwordInput === '8800') {
-                document.getElementById('login').style.display = 'none';
-                document.getElementById('content').style.display = 'block';
-            } else {
-                alert('Incorrect password. Please try again.');
-            }
-        }
+       function checkPassword() {
+    const passwordInput = document.getElementById('password').value;
+    if (passwordInput === '8800') {
+        window.location.href = 'index2.html'; // Redirect to index2.html
+    } else {
+        alert('Incorrect password. Please try again.');
+    }
+}
     </script>
 </body>
 </html>
